@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/VKRequest.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/VKRequest</TokenIdentifier>
+			<Abstract type="html">Current class allows to perform different kind of requests to VK servers.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setDelegate:</TokenIdentifier>
+			<Abstract type="html">Delegate</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/delegate</TokenIdentifier>
+			<Abstract type="html">Delegate</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, weak, readwrite) id&lt;VKRequestDelegate&gt; delegate</Declaration>
+			
+			
+			<Anchor>//api/name/delegate</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setRequestManager:</TokenIdentifier>
+			<Abstract type="html">Request Manager to which current request belongs to.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) VKRequestManager *requestManager</Declaration>
+			
+			
+			<Anchor>//api/name/requestManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/requestManager</TokenIdentifier>
+			<Abstract type="html">Request Manager to which current request belongs to.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) VKRequestManager *requestManager</Declaration>
+			
+			
+			<Anchor>//api/name/requestManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/requestManager</TokenIdentifier>
+			<Abstract type="html">Request Manager to which current request belongs to.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) VKRequestManager *requestManager</Declaration>
+			
+			
+			<Anchor>//api/name/requestManager</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setSignature:</TokenIdentifier>
+			<Abstract type="html">Request signature. Can be used as identifier for each request object.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
+			
+			
+			<Anchor>//api/name/signature</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/signature</TokenIdentifier>
+			<Abstract type="html">Request signature. Can be used as identifier for each request object.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
+			
+			
+			<Anchor>//api/name/signature</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/signature</TokenIdentifier>
+			<Abstract type="html">Request signature. Can be used as identifier for each request object.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) id signature</Declaration>
+			
+			
+			<Anchor>//api/name/signature</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setCacheLiveTime:</TokenIdentifier>
+			<Abstract type="html">Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
+			
+			
+			<Anchor>//api/name/cacheLiveTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cacheLiveTime</TokenIdentifier>
+			<Abstract type="html">Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
+			
+			
+			<Anchor>//api/name/cacheLiveTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/cacheLiveTime</TokenIdentifier>
+			<Abstract type="html">Cache lifetime for current request. Defaults to VKCacheLiveTimeNever.</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) VKCacheLiveTime cacheLiveTime</Declaration>
+			
+			
+			<Anchor>//api/name/cacheLiveTime</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setOfflineMode:</TokenIdentifier>
+			<Abstract type="html">Offline mode for current request. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			
+			
+			<Anchor>//api/name/offlineMode</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/offlineMode</TokenIdentifier>
+			<Abstract type="html">Offline mode for current request. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			
+			
+			<Anchor>//api/name/offlineMode</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/offlineMode</TokenIdentifier>
+			<Abstract type="html">Offline mode for current request. Current mode is used to return cache data even
+if its lifetime ended, no deletion occurs (use this mode if no internet connection exists).</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, assign, readwrite) BOOL offlineMode</Declaration>
+			
+			
+			<Anchor>//api/name/offlineMode</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setHTTPMethod:</TokenIdentifier>
+			<Abstract type="html">HTTP method: GET or POST</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *HTTPMethod</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPMethod</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/HTTPMethod</TokenIdentifier>
+			<Abstract type="html">HTTP method: GET or POST</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *HTTPMethod</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPMethod</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/HTTPMethod</TokenIdentifier>
+			<Abstract type="html">HTTP method: GET or POST</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSString *HTTPMethod</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPMethod</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setHTTPURL:</TokenIdentifier>
+			<Abstract type="html">HTTP URL</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSURL *HTTPURL</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPURL</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/HTTPURL</TokenIdentifier>
+			<Abstract type="html">HTTP URL</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSURL *HTTPURL</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPURL</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/HTTPURL</TokenIdentifier>
+			<Abstract type="html">HTTP URL</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSURL *HTTPURL</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPURL</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setHTTPQueryParameters:</TokenIdentifier>
+			<Abstract type="html">Dictionary with key-value pairs for HTTP query URL part</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPQueryParameters</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPQueryParameters</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/HTTPQueryParameters</TokenIdentifier>
+			<Abstract type="html">Dictionary with key-value pairs for HTTP query URL part</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPQueryParameters</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPQueryParameters</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/HTTPQueryParameters</TokenIdentifier>
+			<Abstract type="html">Dictionary with key-value pairs for HTTP query URL part</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPQueryParameters</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPQueryParameters</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setHTTPBody:</TokenIdentifier>
+			<Abstract type="html">HTTP body</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableData *HTTPBody</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPBody</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/HTTPBody</TokenIdentifier>
+			<Abstract type="html">HTTP body</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableData *HTTPBody</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPBody</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/HTTPBody</TokenIdentifier>
+			<Abstract type="html">HTTP body</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableData *HTTPBody</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPBody</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/setHTTPHeaderFields:</TokenIdentifier>
+			<Abstract type="html">HTTP headers</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPHeaderFields</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPHeaderFields</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/HTTPHeaderFields</TokenIdentifier>
+			<Abstract type="html">HTTP headers</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPHeaderFields</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPHeaderFields</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/VKRequest/HTTPHeaderFields</TokenIdentifier>
+			<Abstract type="html">HTTP headers</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>@property (nonatomic, strong, readwrite) NSMutableDictionary *HTTPHeaderFields</Declaration>
+			
+			
+			<Anchor>//api/name/HTTPHeaderFields</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/request:delegate:</TokenIdentifier>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)request:(NSURLRequest *)request delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">NSURLRequest which will be used as base for VKRequest</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/request:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestMethod:queryParameters:delegate:</TokenIdentifier>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)requestMethod:(NSString *)methodName queryParameters:(NSDictionary *)queryParameters delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">VK method name (users.get, wall.post etc)</Abstract>
+				</Parameter><Parameter>
+					<Name>queryParameters</Name>
+					<Abstract type="html">params which should be sent (key = value)</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/requestMethod:queryParameters:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestHTTPMethod:methodName:queryParameters:delegate:</TokenIdentifier>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)requestHTTPMethod:(NSString *)httpMethod methodName:(NSString *)methodName queryParameters:(NSDictionary *)queryParameters delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>httpMethod</Name>
+					<Abstract type="html">GET/POST</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">VK method name (users.get, wall.post etc)</Abstract>
+				</Parameter><Parameter>
+					<Name>queryParameters</Name>
+					<Abstract type="html">params which should be sent (key = value)</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/requestHTTPMethod:methodName:queryParameters:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/VKRequest/requestHTTPMethod:URL:headers:body:delegate:</TokenIdentifier>
+			<Abstract type="html">Creates a VKRequest request</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>+ (instancetype)requestHTTPMethod:(NSString *)httpMethod URL:(NSURL *)URL headers:(NSDictionary *)headers body:(NSData *)body delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>httpMethod</Name>
+					<Abstract type="html">GET/POST/PUT/DELETE</Abstract>
+				</Parameter><Parameter>
+					<Name>URL</Name>
+					<Abstract type="html">NSURL on which a request will be performed</Abstract>
+				</Parameter><Parameter>
+					<Name>headers</Name>
+					<Abstract type="html">request headers</Abstract>
+				</Parameter><Parameter>
+					<Name>body</Name>
+					<Abstract type="html">request body</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/requestHTTPMethod:URL:headers:body:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithRequest:delegate:</TokenIdentifier>
+			<Abstract type="html">Main method for VKRequest initialization</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithRequest:(NSURLRequest *)request delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>request</Name>
+					<Abstract type="html">NSURLRequest which will be used as a base request for VKRequest</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithRequest:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithMethod:queryParameters:delegate:</TokenIdentifier>
+			<Abstract type="html">Method for VKRequest initialization</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithMethod:(NSString *)methodName queryParameters:(NSDictionary *)queryParameters delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">VK method name (users.get, wall.post etc)</Abstract>
+				</Parameter><Parameter>
+					<Name>queryParameters</Name>
+					<Abstract type="html">params that should be transmitted to VK method</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithMethod:queryParameters:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithHTTPMethod:methodName:queryParameters:delegate:</TokenIdentifier>
+			<Abstract type="html">Method for VKRequest initialization</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithHTTPMethod:(NSString *)httpMethod methodName:(NSString *)methodName queryParameters:(NSDictionary *)queryParameters delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>httpMethod</Name>
+					<Abstract type="html">GET/POST</Abstract>
+				</Parameter><Parameter>
+					<Name>methodName</Name>
+					<Abstract type="html">VK method name (users.get, wall.post etc)</Abstract>
+				</Parameter><Parameter>
+					<Name>queryParameters</Name>
+					<Abstract type="html">params that should be transmitted to VK method</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithHTTPMethod:methodName:queryParameters:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/initWithHTTPMethod:URL:headers:body:delegate:</TokenIdentifier>
+			<Abstract type="html">Method for VKRequest initialization</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (instancetype)initWithHTTPMethod:(NSString *)httpMethod URL:(NSURL *)URL headers:(NSDictionary *)headers body:(NSData *)body delegate:(id&lt;VKRequestDelegate&gt;)delegate</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>httpMethod</Name>
+					<Abstract type="html">GET/POST</Abstract>
+				</Parameter><Parameter>
+					<Name>URL</Name>
+					<Abstract type="html">NSURL on which a request will be performed</Abstract>
+				</Parameter><Parameter>
+					<Name>headers</Name>
+					<Abstract type="html">request headers</Abstract>
+				</Parameter><Parameter>
+					<Name>body</Name>
+					<Abstract type="html">request body</Abstract>
+				</Parameter><Parameter>
+					<Name>delegate</Name>
+					<Abstract type="html">delegate that will receive notifications (should conform to
+VKRequestDelegate protocol)</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract type="html">VKRequest instance</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithHTTPMethod:URL:headers:body:delegate:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/start</TokenIdentifier>
+			<Abstract type="html">Starts request</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)start</Declaration>
+			
+			
+			<Anchor>//api/name/start</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/cancel</TokenIdentifier>
+			<Abstract type="html">Cancels request</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)cancel</Declaration>
+			
+			
+			<Anchor>//api/name/cancel</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/VKRequest/attachFile:name:field:</TokenIdentifier>
+			<Abstract type="html">Content of any file is added</Abstract>
+			<DeclaredIn>VKRequest.h</DeclaredIn>			
+			
+			<Declaration>- (void)attachFile:(NSData *)file name:(NSString *)name field:(NSString *)field</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>file</Name>
+					<Abstract type="html">file byte representation</Abstract>
+				</Parameter><Parameter>
+					<Name>name</Name>
+					<Abstract type="html">file name</Abstract>
+				</Parameter><Parameter>
+					<Name>field</Name>
+					<Abstract type="html">HTML field name, which will be used to send (wrap) data</Abstract>
+				</Parameter>
+			</Parameters>
+			
+			<Anchor>//api/name/attachFile:name:field:</Anchor>
+            <NodeRef refid="4"/>
+		</Token>
+		
+	</File>
+</Tokens>

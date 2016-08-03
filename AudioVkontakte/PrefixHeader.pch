@@ -1,0 +1,13 @@
+//
+//  PrefixHeader.pch
+//  AudioVkontakte
+//
+//  Created by dRumyankov on 8/2/16.
+//  Copyright © 2016 DimaRumyankov. All rights reserved.
+//
+
+#import "AVKEngine.h"
+#import "AVKContainer.h"
+#import "AVKStringConstants.h"
+#import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
