@@ -20,6 +20,7 @@
 @property NSString *title;
 @property NSString *url;
 
+- (NSDictionary *)audioObjectJson;
 + (NSString *)durationToString:(NSUInteger)duration;
 
 @end

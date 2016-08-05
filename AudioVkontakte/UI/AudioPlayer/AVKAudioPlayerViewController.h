@@ -11,7 +11,8 @@
 @interface AVKAudioPlayerViewController : UIViewController
 
 @property NSInteger currentSong;
-@property (nonatomic, strong) AVAudioPlayer *audioPlayer;
+@property (nonatomic, strong) AVPlayer *audioPlayer;
+@property (nonatomic, strong) AVAudioPlayer *cacheAudioPlayer;
 
 - (void)clearAudioPlayer;
 

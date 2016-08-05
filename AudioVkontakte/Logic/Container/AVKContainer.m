@@ -11,10 +11,20 @@
 @implementation AVKContainer
 
 @synthesize audioContainer = audioContainer;
+@synthesize audioWhichCached = audioWhichCached;
 
 - (id)init{
     if(self = [super init]){
         self.audioContainer = [NSArray array];
+        
+        NSUserDefaults *userData = [NSUserDefaults standardUserDefaults];
+        NSArray *jsonObjects = [userData objectForKey:kKeyValueURLsCache];
+        
+        if(jsonObjects){
+            self.audioWhichCached = [AVKEngine arrayOfObjectsOfClass:[AVKAudio class] fromJSON:jsonObjects];
+        } else {
+            self.audioWhichCached = [NSArray array];
+        }
     }
     return self;
 }

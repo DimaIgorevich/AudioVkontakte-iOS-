@@ -10,7 +10,7 @@
 
 CGFloat const kStartValue = 0.0f;
 
-@interface AVKAudioPlayerViewController () <AVAudioPlayerDelegate>{
+@interface AVKAudioPlayerViewController ()<UIAlertViewDelegate, AVAudioPlayerDelegate>{
     NSTimer *updateSongTimer;
 }
 
@@ -30,13 +30,10 @@ CGFloat const kStartValue = 0.0f;
 
 @end
 
-
-
 @implementation AVKAudioPlayerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     [self backgroundSetup];
 }
 
@@ -59,7 +56,7 @@ CGFloat const kStartValue = 0.0f;
 }
 
 - (BOOL)isPlayingSong{
-    return self.audioPlayer != nil;
+    return self.audioPlayer != nil || self.cacheAudioPlayer != nil;
 }
 
 - (void)nextTrack{
@@ -80,8 +77,15 @@ CGFloat const kStartValue = 0.0f;
 }
 
 - (void)clearAudioPlayer{
-    [self.audioPlayer stop];
-    self.audioPlayer = nil;
+    if([ITReachabilityUtils isNetworkAvailable]){
+        [self.audioPlayer seekToTime:CMTimeMake(0, 1)];
+        [self.audioPlayer pause];
+    
+        self.audioPlayer = nil;
+    } else {
+        [self.cacheAudioPlayer stop];
+        self.cacheAudioPlayer = nil;
+    }
     self.sliderProgressSong.value = kStartValue;
 }
 
@@ -92,19 +96,44 @@ CGFloat const kStartValue = 0.0f;
 //    songRequest.signature = kRequestSignatureAudioInfoById;
 //    [songRequest start];
     
+    if([ITReachabilityUtils isNetworkAvailable]){
+        [self loadSongFromInternet];
+    } else {
+        [self loadSongFromCache];
+    }
     
-    NSURL *audioTrackURL = [NSURL URLWithString:self.song.url];
-    NSData *audioData = [NSData dataWithContentsOfURL:audioTrackURL];
-    
-    _audioPlayer = [[AVAudioPlayer alloc] initWithData:audioData error:nil];
-    _audioPlayer.delegate = self;
-    _audioPlayer.numberOfLoops = 0;
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(avPlayerDidFinishPlaying:) name:AVPlayerItemDidPlayToEndTimeNotification object:[self.audioPlayer currentItem]];
     
     [self startPlaySong];
 }
 
+- (void)loadSongFromInternet{
+    NSURL *audioTrackURL = [NSURL URLWithString:self.song.url];
+    self.audioPlayer = [AVPlayer playerWithURL:audioTrackURL];
+}
+
+- (void)loadSongFromCache{
+    NSUInteger userID = [VKUser currentUser].accessToken.userID;
+    VKStorageItem *item = [[VKStorage sharedStorage] storageItemForUserID:userID];
+    
+    NSData *dataSong = [item.cache cacheForURL:[NSURL URLWithString:self.song.url]];
+    self.cacheAudioPlayer = [[AVAudioPlayer alloc] initWithData:dataSong error:nil];
+    self.cacheAudioPlayer.delegate = self;
+    self.cacheAudioPlayer.numberOfLoops = 0;
+}
+
 - (void)startPlaySong{
-    [_audioPlayer play];
+    if([ITReachabilityUtils isNetworkAvailable]){
+        [_audioPlayer play];
+    } else {
+        [_cacheAudioPlayer play];
+        if(_cacheAudioPlayer == nil){
+            NSString *messageError = [NSString stringWithFormat:@"Sorry, %@ - %@ can't be play", self.song.artist, self.song.title];
+            UIAlertView *alertErrorPlaying = [[UIAlertView alloc] initWithTitle:@"AudioVkontakte" message:messageError delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
+            [alertErrorPlaying show];
+        }
+        NSLog(@"play: %@", self.cacheAudioPlayer);
+    }
     updateSongTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateSongTime) userInfo:nil repeats:YES];
 }
 
@@ -130,6 +159,13 @@ CGFloat const kStartValue = 0.0f;
     [super didReceiveMemoryWarning];
 }
 
+- (void)prepareToNewSong{
+    [self stopTimer];
+    [self clearAudioPlayer];
+    [self setSongIntoPlayer];
+    [self loadSong];
+}
+
 #pragma mark - AVAudioPlayerDelegate
 
 - (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
@@ -137,11 +173,12 @@ CGFloat const kStartValue = 0.0f;
     [self prepareToNewSong];
 }
 
-- (void)prepareToNewSong{
-    [self stopTimer];
-    [self clearAudioPlayer];
-    [self setSongIntoPlayer];
-    [self loadSong];
+#pragma mark - AVPlayerNotifications
+
+- (void)avPlayerDidFinishPlaying:(NSNotification *)notification{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AVPlayerItemDidPlayToEndTimeNotification object:[self.audioPlayer currentItem]];
+    [self nextTrack];
+    [self prepareToNewSong];
 }
 
 #pragma mark - Timer Methods
@@ -152,18 +189,35 @@ CGFloat const kStartValue = 0.0f;
 }
 
 - (void)updateSongTime{
-    self.currentTime.text = [AVKAudio durationToString:self.audioPlayer.currentTime];
-    self.sliderProgressSong.value = self.audioPlayer.currentTime/self.song.duration;
+    if([ITReachabilityUtils isNetworkAvailable]){
+        CGFloat currentTimeInSeconds = CMTimeGetSeconds(self.audioPlayer.currentTime);
+        self.currentTime.text = [AVKAudio durationToString:currentTimeInSeconds];
+        self.sliderProgressSong.value = currentTimeInSeconds/self.song.duration;
+    } else {
+        self.currentTime.text = [AVKAudio durationToString:self.cacheAudioPlayer.currentTime];
+        self.sliderProgressSong.value = self.cacheAudioPlayer.currentTime/self.song.duration;
+    }
 }
 
 #pragma mark - Handlers
 
 - (IBAction)changeTimeline:(id)sender {
     [self stopTimer];
-    [self.audioPlayer stop];
+    CGFloat newTimeValue = self.sliderProgressSong.value*self.song.duration;
+    if([ITReachabilityUtils isNetworkAvailable]){
+        [self.audioPlayer pause];
+        
+        CMTime newTime = CMTimeMake(newTimeValue, 1);
+        [self.audioPlayer seekToTime:newTime];
+        CGFloat currentTimeInSeconds = CMTimeGetSeconds(self.audioPlayer.currentTime);
+        self.currentTime.text = [AVKAudio durationToString:currentTimeInSeconds];
+    } else {
+        [self.cacheAudioPlayer stop];
+        
+        [self.cacheAudioPlayer setCurrentTime:newTimeValue];
+        self.currentTime.text = [AVKAudio durationToString:self.cacheAudioPlayer.currentTime];
+    }
     
-    [self.audioPlayer setCurrentTime:self.sliderProgressSong.value*self.song.duration];
-    self.currentTime.text = [AVKAudio durationToString:self.audioPlayer.currentTime];
     [self startPlaySong];
 }
 
@@ -186,7 +240,72 @@ CGFloat const kStartValue = 0.0f;
 }
 
 - (IBAction)moreActionButton:(id)sender {
+    NSString *messageForView = [NSString stringWithFormat:@"%@ - %@", self.song.artist, self.song.title];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Add to cache storage" message:messageForView delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: @"Add",nil];
+    [alert show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex NS_DEPRECATED_IOS(2_0, 9_0){
+    if (buttonIndex == [alertView cancelButtonIndex]){
+        NSLog(@"cancel");
+    }else{
+        NSLog(@"Add");
+        [self addDataSongToCache];
+    }
+}
+
+#pragma mark - VKFramework Cache Data Method
+
+- (void)addDataSongToCache{
+    AVKAudio *selectedSongItem = self.song;
     
+    NSUInteger userID = [VKUser currentUser].accessToken.userID;
+    VKStorageItem *item = [[VKStorage sharedStorage] storageItemForUserID:userID];
+    
+    NSData *songData = [item.cache cacheForURL:[NSURL URLWithString:selectedSongItem.url]];
+    
+    if(songData == nil){
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^{
+            NSData *songTmpData = [NSData dataWithContentsOfURL:[NSURL URLWithString:selectedSongItem.url]];
+            
+            NSMutableArray <AVKAudio *>*newCachedAudiosData = [[NSMutableArray alloc] init];
+            for(AVKAudio *objectAudio in [[AVKContainer sharedInstance] audioWhichCached]){
+                [newCachedAudiosData addObject:objectAudio];
+            }
+            [newCachedAudiosData addObject:selectedSongItem];
+            
+            [[AVKContainer sharedInstance] setAudioWhichCached:newCachedAudiosData];
+            [self writeCacheURL];
+            
+            [item.cache addCache:songTmpData forURL:[NSURL URLWithString:selectedSongItem.url] liveTime:VKCacheLiveTimeOneWeek];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString *messageForView = [NSString stringWithFormat:@"%@ - %@", selectedSongItem.artist, selectedSongItem.title];
+                
+                UIAlertView *alertFinishUpload = [[UIAlertView alloc] initWithTitle:@"Finish upload to cache storage" message:messageForView delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
+                [alertFinishUpload show];
+            });
+            
+        });
+    } else {
+        NSString *messageForView = [NSString stringWithFormat:@"%@ - %@ is already in cache storage", selectedSongItem.artist, selectedSongItem.title];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"AudioVkontakte" message:messageForView delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
+        [alert show];
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"AudioVkontakte" message:@"Start upload song to cache storage" delegate:self cancelButtonTitle:@"Close" otherButtonTitles: nil];
+    [alert show];
+}
+
+- (void)writeCacheURL{
+    NSMutableArray <NSDictionary *>*jsonAudioObjects = [NSMutableArray array];
+    for(AVKAudio *audioObject in [[AVKContainer sharedInstance] audioWhichCached]){
+        [jsonAudioObjects addObject:[audioObject audioObjectJson]];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:jsonAudioObjects forKey:kKeyValueURLsCache];
 }
 
 @end

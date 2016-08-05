@@ -25,4 +25,7 @@ FOUNDATION_EXTERN NSString * const kFinishLoadAudioList;
 //Storyboards.
 FOUNDATION_EXTERN NSString * const kStoryboardAudioPlayer;
 
+//Key For Cache URL's
+FOUNDATION_EXTERN NSString * const kKeyValueURLsCache;
+
 @end

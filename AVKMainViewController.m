@@ -26,15 +26,26 @@
 - (void)viewDidLoad{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(finishLoadAudioList:) name:kFinishLoadAudioList object:nil];
     self.title = @"ГЛАВНАЯ";
-    [self loadMainView];
+    if([ITReachabilityUtils isNetworkAvailable]){
+        [self loadMainView];
+    } else {
+        [self loadViewWithCacheData];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    if(self.vcTableView){
+        [self.vcTableView reloadData];
+    }
 }
 
 - (void)loadMainView{
     [[VKConnector sharedInstance] startWithAppID:kVKAppID permissons:[kVKPermissionsArray componentsSeparatedByString:@","] webView:self.vcWebView delegate:self];
+}
+
+- (void)loadViewWithCacheData{
+    [self finishLoadAudioList:nil];
 }
 
 #pragma mark - VKConnectorDelegate
@@ -59,6 +70,12 @@
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(![ITReachabilityUtils isNetworkAvailable]){
+        NSLog(@"use cache data");
+        
+        [self loadDataFromCache];
+    }
+    
     return [[AVKContainer sharedInstance] audioContainer].count;
 }
 
@@ -141,6 +158,13 @@
     [self.vcWebView setHidden:YES];
     
     [self initUITableView];
+}
+
+#pragma mark - Cache Data Methods
+
+- (void)loadDataFromCache{
+    NSArray *cacheData = [[NSUserDefaults standardUserDefaults] objectForKey:kKeyValueURLsCache];
+    [[AVKContainer sharedInstance] setAudioContainer:[AVKEngine arrayOfObjectsOfClass:[AVKAudio class] fromJSON:cacheData]];
 }
 
 @end

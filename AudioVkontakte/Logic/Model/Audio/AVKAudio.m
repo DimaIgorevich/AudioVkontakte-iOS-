@@ -27,6 +27,18 @@ CGFloat const kSecondsInMinutes = 60.0f;
     return self;
 }
 
+- (NSDictionary *)audioObjectJson{
+    return @{
+             @"aid" : @(self.aid),
+             @"artist" : self.artist,
+             @"duration" : @(self.duration),
+             @"genre" : @(self.genre),
+             @"owner_id" : @(self.owner_id),
+             @"title" : self.title,
+             @"url" : self.url
+             };
+}
+
 + (NSString *)durationToString:(NSUInteger)duration{
     CGFloat currentDuration = duration;
     NSInteger minutes = currentDuration/kSecondsInMinutes;

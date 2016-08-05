@@ -11,9 +11,11 @@
 
 @interface AVKContainer : NSObject{
     NSArray <AVKAudio *>*audioContainer;
+    NSArray <AVKAudio *>*audioWhichCached;
 }
 
 @property (nonatomic, strong) NSArray <AVKAudio *>*audioContainer;
+@property (nonatomic, strong) NSArray <AVKAudio *>*audioWhichCached;
 
 + (id)sharedInstance;
 

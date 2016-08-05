@@ -24,4 +24,7 @@ NSString * const kFinishLoadAudioList = @"finishLoadAudioList";
 //Storyboards.
 NSString * const kStoryboardAudioPlayer = @"AudioPlayer";
 
+//Key For Cache URL's
+NSString * const kKeyValueURLsCache = @"URLsCache";
+
 @end
