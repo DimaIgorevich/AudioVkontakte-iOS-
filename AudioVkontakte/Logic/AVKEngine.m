@@ -57,7 +57,8 @@
 
 - (void)request:(VKRequest *)request response:(id)response{
     if(request.signature == kRequestSignatureAudio){
-        [[response objectForKey:@"response"] removeObjectAtIndex:0];
+        
+        //[[response objectForKey:@"response"] removeObjectAtIndex:0];
         
         NSArray *musicsFromRequest = [AVKEngine arrayOfObjectsOfClass:[AVKAudio class] fromJSON:[response objectForKey:@"response"]];
         [[AVKContainer sharedInstance] setAudioContainer:musicsFromRequest];
