@@ -95,7 +95,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="nbk-hS-SB1"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="next_button.png">
-                                                    <color key="titleColor" patternImage="FC3E80F8-DE94-4E43-BB7F-3A8343BE4D12" colorSpace="pattern"/>
+                                                    <color key="titleColor" patternImage="33339841-2A78-417D-9464-928DEC6D2000" colorSpace="pattern"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="nextActionButton:" destination="F2o-Ev-RD8" eventType="touchUpInside" id="mAx-Nh-wWA"/>
@@ -239,7 +239,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="FC3E80F8-DE94-4E43-BB7F-3A8343BE4D12" width="320" height="460">
+        <image name="33339841-2A78-417D-9464-928DEC6D2000" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -10063,7 +10063,7 @@ AAABAAEAAAEGAAMAAAABAAIAAAERAAQAAAAFAAj80gESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMA
 AAABAGYAAAEXAAQAAAAFAAj8vgEcAAMAAAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAAEAAj85odzAAcA
 AAxIAAj87gAAAAAACAAIAAgACAAB/gAAAf4AAAH+AAAB/gAAAQQAAAAACAAB/ggAA/wIAAX6CAAH+AgA
 AQABAAEAAQAADEhMaW5vAhAAAG1udHJSR0IgWFlaIAfOAAIACQAGADEAAGFjc3BNU0ZUAAAAAElFQyBz
-UkdCAAAAAAAAAAAAAAAAAAD21gABAAAAANMtSFAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+UkdCAAAAAAAAAAAAAAABAAD21gABAAAAANMtSFAgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
 AAAAAAAAAAAAAAAAAAAAAAAAEWNwcnQAAAFQAAAAM2Rlc2MAAAGEAAAAbHd0cHQAAAHwAAAAFGJrcHQA
 AAIEAAAAFHJYWVoAAAIYAAAAFGdYWVoAAAIsAAAAFGJYWVoAAAJAAAAAFGRtbmQAAAJUAAAAcGRtZGQA
 AALEAAAAiHZ1ZWQAAANMAAAAhnZpZXcAAAPUAAAAJGx1bWkAAAP4AAAAFG1lYXMAAAQMAAAAJHRlY2gA

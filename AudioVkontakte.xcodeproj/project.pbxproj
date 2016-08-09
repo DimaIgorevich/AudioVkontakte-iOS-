@@ -105,6 +105,10 @@
 		4997CD061D50EB960005BCA7 /* AVKContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997CD051D50EB960005BCA7 /* AVKContainer.m */; };
 		4997CD0A1D50F7AD0005BCA7 /* AVKAudioCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4997CD091D50F7AD0005BCA7 /* AVKAudioCell.m */; };
 		4997CD0C1D50F7E80005BCA7 /* AudioCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4997CD0B1D50F7E80005BCA7 /* AudioCell.xib */; };
+		49A166E11D5A07D700F95D30 /* AVKPreloaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A166E01D5A07D700F95D30 /* AVKPreloaderView.m */; };
+		49A166E61D5A0D1200F95D30 /* EmptyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49A166E51D5A0D1200F95D30 /* EmptyCell.xib */; };
+		49A166E91D5A0D4700F95D30 /* AVKEmptyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A166E81D5A0D4700F95D30 /* AVKEmptyCell.m */; };
+		49A166EC1D5A0EC100F95D30 /* AVKNumericConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 49A166EB1D5A0EC100F95D30 /* AVKNumericConstants.m */; };
 		49B0513A1D539762006C0651 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B051371D539762006C0651 /* AFNetworkReachabilityManager.m */; };
 		49B0513B1D539762006C0651 /* ITReachabilityUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B051391D539762006C0651 /* ITReachabilityUtils.m */; };
 /* End PBXBuildFile section */
@@ -234,6 +238,13 @@
 		4997CD081D50F7AD0005BCA7 /* AVKAudioCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVKAudioCell.h; path = AudioVkontakte/UI/Main/AudioCell/AVKAudioCell.h; sourceTree = "<group>"; };
 		4997CD091D50F7AD0005BCA7 /* AVKAudioCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVKAudioCell.m; path = AudioVkontakte/UI/Main/AudioCell/AVKAudioCell.m; sourceTree = "<group>"; };
 		4997CD0B1D50F7E80005BCA7 /* AudioCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AudioCell.xib; path = AudioVkontakte/UI/Main/AudioCell/AudioCell.xib; sourceTree = "<group>"; };
+		49A166DF1D5A07D700F95D30 /* AVKPreloaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVKPreloaderView.h; path = AudioVkontakte/UI/Views/PreloaderView/AVKPreloaderView.h; sourceTree = "<group>"; };
+		49A166E01D5A07D700F95D30 /* AVKPreloaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVKPreloaderView.m; path = AudioVkontakte/UI/Views/PreloaderView/AVKPreloaderView.m; sourceTree = "<group>"; };
+		49A166E51D5A0D1200F95D30 /* EmptyCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = EmptyCell.xib; path = AudioVkontakte/UI/Main/EmptyCell/EmptyCell.xib; sourceTree = "<group>"; };
+		49A166E71D5A0D4700F95D30 /* AVKEmptyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVKEmptyCell.h; path = AudioVkontakte/UI/Main/EmptyCell/AVKEmptyCell.h; sourceTree = "<group>"; };
+		49A166E81D5A0D4700F95D30 /* AVKEmptyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVKEmptyCell.m; path = AudioVkontakte/UI/Main/EmptyCell/AVKEmptyCell.m; sourceTree = "<group>"; };
+		49A166EA1D5A0EC100F95D30 /* AVKNumericConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVKNumericConstants.h; path = AudioVkontakte/Constants/AVKNumericConstants.h; sourceTree = "<group>"; };
+		49A166EB1D5A0EC100F95D30 /* AVKNumericConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVKNumericConstants.m; path = AudioVkontakte/Constants/AVKNumericConstants.m; sourceTree = "<group>"; };
 		49B051361D539762006C0651 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
 		49B051371D539762006C0651 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		49B051381D539762006C0651 /* ITReachabilityUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITReachabilityUtils.h; sourceTree = "<group>"; };
@@ -648,6 +659,7 @@
 		4997CCE91D50C0DA0005BCA7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				49A166DE1D5A076E00F95D30 /* PreloaderView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -666,6 +678,8 @@
 			children = (
 				4997CCF31D50D3780005BCA7 /* AVKStringConstants.h */,
 				4997CCF41D50D3780005BCA7 /* AVKStringConstants.m */,
+				49A166EA1D5A0EC100F95D30 /* AVKNumericConstants.h */,
+				49A166EB1D5A0EC100F95D30 /* AVKNumericConstants.m */,
 			);
 			name = Constants;
 			path = ..;
@@ -674,6 +688,7 @@
 		4997CCF61D50DBE50005BCA7 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				49A166E21D5A0C8200F95D30 /* EmptyCell */,
 				4997CD071D50F7700005BCA7 /* AudioCell */,
 				4997CCEE1D50CF0E0005BCA7 /* AVKMainViewController.h */,
 				4997CCEF1D50CF0E0005BCA7 /* AVKMainViewController.m */,
@@ -726,6 +741,25 @@
 				4997CD0B1D50F7E80005BCA7 /* AudioCell.xib */,
 			);
 			name = AudioCell;
+			sourceTree = "<group>";
+		};
+		49A166DE1D5A076E00F95D30 /* PreloaderView */ = {
+			isa = PBXGroup;
+			children = (
+				49A166DF1D5A07D700F95D30 /* AVKPreloaderView.h */,
+				49A166E01D5A07D700F95D30 /* AVKPreloaderView.m */,
+			);
+			name = PreloaderView;
+			sourceTree = "<group>";
+		};
+		49A166E21D5A0C8200F95D30 /* EmptyCell */ = {
+			isa = PBXGroup;
+			children = (
+				49A166E51D5A0D1200F95D30 /* EmptyCell.xib */,
+				49A166E71D5A0D4700F95D30 /* AVKEmptyCell.h */,
+				49A166E81D5A0D4700F95D30 /* AVKEmptyCell.m */,
+			);
+			name = EmptyCell;
 			sourceTree = "<group>";
 		};
 		49B051341D539762006C0651 /* ReachebilityUtils */ = {
@@ -825,6 +859,7 @@
 				4997CCA91D50BF720005BCA7 /* VKUser.html in Resources */,
 				4997CCC21D50BF720005BCA7 /* VKCache.html in Resources */,
 				4997CCCD1D50BF720005BCA7 /* disclosure.png in Resources */,
+				49A166E61D5A0D1200F95D30 /* EmptyCell.xib in Resources */,
 				4997CCBA1D50BF720005BCA7 /* Tokens4.xml in Resources */,
 				4997CCCE1D50BF720005BCA7 /* disclosure_open.png in Resources */,
 				4997CC9A1D50BF720005BCA7 /* Info.plist in Resources */,
@@ -900,11 +935,14 @@
 				4997CCDE1D50BF720005BCA7 /* VKUser.m in Sources */,
 				4997CCD51D50BF720005BCA7 /* NSString+Utilities.m in Sources */,
 				4997CCF01D50CF0E0005BCA7 /* AVKMainViewController.m in Sources */,
+				49A166EC1D5A0EC100F95D30 /* AVKNumericConstants.m in Sources */,
 				4997CD061D50EB960005BCA7 /* AVKContainer.m in Sources */,
 				4997CC1A1D50BE8D0005BCA7 /* AppDelegate.m in Sources */,
 				4997CD0A1D50F7AD0005BCA7 /* AVKAudioCell.m in Sources */,
+				49A166E91D5A0D4700F95D30 /* AVKEmptyCell.m in Sources */,
 				49B0513A1D539762006C0651 /* AFNetworkReachabilityManager.m in Sources */,
 				4997CCDC1D50BF720005BCA7 /* VKCache.m in Sources */,
+				49A166E11D5A07D700F95D30 /* AVKPreloaderView.m in Sources */,
 				4997CCD41D50BF720005BCA7 /* NSData+toBase64.m in Sources */,
 				4997CCED1D50C1960005BCA7 /* AVKEngine.m in Sources */,
 				4997CCDB1D50BF720005BCA7 /* VKAccessToken.m in Sources */,

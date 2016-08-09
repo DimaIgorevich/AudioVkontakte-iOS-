@@ -34,24 +34,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSL-yg-bGl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JTz-4B-ZDX" customClass="AVKPreloaderView">
+                                <rect key="frame" x="20" y="97" width="560" height="503"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Zgs-oF-JKJ">
+                                        <rect key="frame" x="262" y="233" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uWD-vO-bii">
+                                        <rect key="frame" x="243" y="280" width="75" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="uWD-vO-bii" firstAttribute="centerX" secondItem="JTz-4B-ZDX" secondAttribute="centerX" id="RNr-8U-DPD"/>
+                                    <constraint firstItem="uWD-vO-bii" firstAttribute="top" secondItem="Zgs-oF-JKJ" secondAttribute="bottom" constant="10" id="cJx-Bt-66W"/>
+                                    <constraint firstItem="Zgs-oF-JKJ" firstAttribute="centerY" secondItem="JTz-4B-ZDX" secondAttribute="centerY" id="pCP-fv-Rgt"/>
+                                    <constraint firstItem="Zgs-oF-JKJ" firstAttribute="centerX" secondItem="JTz-4B-ZDX" secondAttribute="centerX" id="sU6-UX-n72"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="vIndicatorActivity" destination="Zgs-oF-JKJ" id="wvp-1a-sEh"/>
+                                    <outlet property="vLabelTitle" destination="uWD-vO-bii" id="8UE-Vx-Ejl"/>
+                                </connections>
+                            </view>
+                            <webView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gSL-yg-bGl">
                                 <rect key="frame" x="10" y="-10" width="580" height="610"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="mJd-Gb-r9C"/>
                                 </connections>
                             </webView>
+                            <segmentedControl hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="sXG-9n-adL">
+                                <rect key="frame" x="25" y="69" width="550" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="iaB-bs-oyO"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="AudioList"/>
+                                    <segment title="CacheList"/>
+                                </segments>
+                                <color key="tintColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeDataSource:" destination="BYZ-38-t0r" eventType="valueChanged" id="z7l-5e-Oi6"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e2V-6V-QPt">
+                                <rect key="frame" x="10" y="102" width="580" height="498"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="nkN-CB-fzq"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="CgE-KQ-MBu"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="e2V-6V-QPt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="0UP-66-5qU"/>
+                            <constraint firstItem="sXG-9n-adL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="5" id="6W4-1t-siT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e2V-6V-QPt" secondAttribute="bottom" id="77L-FK-Ovq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sXG-9n-adL" secondAttribute="trailing" constant="5" id="8M3-JA-n5B"/>
                             <constraint firstItem="gSL-yg-bGl" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-10" id="DaI-Lu-8cV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="e2V-6V-QPt" secondAttribute="trailing" constant="-10" id="Jk0-Lq-3RC"/>
+                            <constraint firstItem="e2V-6V-QPt" firstAttribute="top" secondItem="sXG-9n-adL" secondAttribute="bottom" constant="5" id="NNb-nM-OAY"/>
+                            <constraint firstItem="sXG-9n-adL" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="U2q-db-kTk"/>
                             <constraint firstItem="gSL-yg-bGl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-10" id="Zgi-tD-hNh"/>
+                            <constraint firstItem="JTz-4B-ZDX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="bJS-dA-ANX"/>
+                            <constraint firstItem="sXG-9n-adL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="5" id="dTa-nJ-Epg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gSL-yg-bGl" secondAttribute="trailing" constant="-10" id="dcs-Bg-Tdt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JTz-4B-ZDX" secondAttribute="trailing" id="fMh-x6-OpM"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JTz-4B-ZDX" secondAttribute="bottom" id="gr5-aO-VEn"/>
+                            <constraint firstItem="JTz-4B-ZDX" firstAttribute="top" secondItem="sXG-9n-adL" secondAttribute="bottom" id="mfb-s4-xcy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gSL-yg-bGl" secondAttribute="bottom" id="uVd-ts-nfX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NSc-te-1H9"/>
                     <connections>
+                        <outlet property="vcPreloaderView" destination="JTz-4B-ZDX" id="VtE-D6-2fP"/>
+                        <outlet property="vcSegmentControl" destination="sXG-9n-adL" id="uj2-tl-0pO"/>
+                        <outlet property="vcTableView" destination="e2V-6V-QPt" id="6u3-5O-qWa"/>
                         <outlet property="vcWebView" destination="gSL-yg-bGl" id="zLK-M6-fx1"/>
                     </connections>
                 </viewController>

@@ -20,11 +20,16 @@ NSString * const kRequestSignatureAudioInfoById = @"audioById";
 
 //Notifications.
 NSString * const kFinishLoadAudioList = @"finishLoadAudioList";
+NSString * const kCheckInternetConnection = @"checkInternetConnection";
 
 //Storyboards.
 NSString * const kStoryboardAudioPlayer = @"AudioPlayer";
 
 //Key For Cache URL's
 NSString * const kKeyValueURLsCache = @"URLsCache";
+
+//Data Source String Type
+NSString * const kDataSourceAudioListFromInternet = @"Internet";
+NSString * const kDataSourceAudioListFromCache = @"Cache";
 
 @end

@@ -21,11 +21,16 @@ FOUNDATION_EXTERN NSString * const kRequestSignatureAudioInfoById;
 
 //Notifications.
 FOUNDATION_EXTERN NSString * const kFinishLoadAudioList;
+FOUNDATION_EXTERN NSString * const kCheckInternetConnection;
 
 //Storyboards.
 FOUNDATION_EXTERN NSString * const kStoryboardAudioPlayer;
 
 //Key For Cache URL's
 FOUNDATION_EXTERN NSString * const kKeyValueURLsCache;
+
+//Data Source String Type
+FOUNDATION_EXTERN NSString * const kDataSourceAudioListFromInternet;
+FOUNDATION_EXTERN NSString * const kDataSourceAudioListFromCache;
 
 @end
