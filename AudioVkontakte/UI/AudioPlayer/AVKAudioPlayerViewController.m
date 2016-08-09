@@ -8,6 +8,9 @@
 
 #import "AVKAudioPlayerViewController.h"
 
+#define kPlayImageStatusButton @"play_button.png"
+#define kPauseImageStatusButton @"pause_button.png"
+
 CGFloat const kStartValue = 0.0f;
 
 @interface AVKAudioPlayerViewController ()<UIAlertViewDelegate, AVAudioPlayerDelegate>{
@@ -23,6 +26,8 @@ CGFloat const kStartValue = 0.0f;
 
 @property (weak, nonatomic) IBOutlet UILabel *songTitle;
 @property (weak, nonatomic) IBOutlet UILabel *artist;
+
+@property (weak, nonatomic) IBOutlet UIButton *playButton;
 
 @property BOOL isLoopSong;
 
@@ -134,6 +139,8 @@ CGFloat const kStartValue = 0.0f;
         }
         NSLog(@"play: %@", self.cacheAudioPlayer);
     }
+    
+    [self changeOnPauseStatusBackgroundForButton];
     updateSongTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(updateSongTime) userInfo:nil repeats:YES];
 }
 
@@ -222,7 +229,41 @@ CGFloat const kStartValue = 0.0f;
 }
 
 - (IBAction)playActionButton:(id)sender{
-    NSLog(@"play");
+    if(self.audioPlayer){
+        [self changeStatusAVPlayer];
+    }
+    
+    if(self.cacheAudioPlayer){
+        [self changeStatusAVAudioPlayer];
+    }
+}
+
+- (void)changeStatusAVPlayer{
+    if(self.audioPlayer.rate != 0){
+        [self.audioPlayer pause];
+        [self changeOnPlayStatusBackgroundForButton];
+    } else {
+        [self.audioPlayer play];
+        [self changeOnPauseStatusBackgroundForButton];
+    }
+}
+
+- (void)changeStatusAVAudioPlayer{
+    if([self.cacheAudioPlayer isPlaying]){
+        [self.cacheAudioPlayer stop];
+        [self changeOnPlayStatusBackgroundForButton];
+    } else {
+        [self.cacheAudioPlayer play];
+        [self changeOnPauseStatusBackgroundForButton];
+    }
+}
+
+- (void)changeOnPauseStatusBackgroundForButton{
+    [self.playButton setBackgroundImage:[UIImage imageNamed:kPauseImageStatusButton] forState:UIControlStateNormal];
+}
+
+- (void)changeOnPlayStatusBackgroundForButton{
+    [self.playButton setBackgroundImage:[UIImage imageNamed:kPlayImageStatusButton] forState:UIControlStateNormal];
 }
 
 - (IBAction)nextActionButton:(id)sender{

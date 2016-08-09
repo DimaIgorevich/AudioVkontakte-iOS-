@@ -95,7 +95,7 @@
                                                     <constraint firstAttribute="width" constant="50" id="nbk-hS-SB1"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="next_button.png">
-                                                    <color key="titleColor" patternImage="33339841-2A78-417D-9464-928DEC6D2000" colorSpace="pattern"/>
+                                                    <color key="titleColor" patternImage="87667B45-B9A9-4F24-96E6-2354D0002423" colorSpace="pattern"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="nextActionButton:" destination="F2o-Ev-RD8" eventType="touchUpInside" id="mAx-Nh-wWA"/>
@@ -213,6 +213,7 @@
                         <outlet property="currentTime" destination="um2-lh-pfB" id="G8K-ir-PtM"/>
                         <outlet property="duration" destination="OqE-im-mhh" id="AH7-F3-uLR"/>
                         <outlet property="mirrorAlbumImageView" destination="Mn6-WV-TRP" id="Ua5-9s-Nrq"/>
+                        <outlet property="playButton" destination="8I6-eb-xWi" id="OJh-er-hK6"/>
                         <outlet property="sliderProgressSong" destination="qBF-fk-maE" id="AOW-Xd-cKR"/>
                         <outlet property="songTitle" destination="lxH-KR-R9h" id="2Gf-CY-1i1"/>
                     </connections>
@@ -239,7 +240,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="33339841-2A78-417D-9464-928DEC6D2000" width="320" height="460">
+        <image name="87667B45-B9A9-4F24-96E6-2354D0002423" width="320" height="460">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

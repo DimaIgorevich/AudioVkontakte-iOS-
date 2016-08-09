@@ -340,8 +340,8 @@
 		4997CC2C1D50BF550005BCA7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				4997CCEA1D50C0DF0005BCA7 /* Screens */,
 				4997CCE91D50C0DA0005BCA7 /* Views */,
+				4997CCEA1D50C0DF0005BCA7 /* Screens */,
 			);
 			name = UI;
 			path = ..;
